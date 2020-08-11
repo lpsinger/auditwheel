@@ -186,10 +186,6 @@ def _is_valid_rpath(rpath: str,
         logger.debug('rpath entry {} could not be resolved to an absolute '
                      'path -- discarding it.'.format(rpath))
         return False
-    elif not is_subdir(full_rpath_entry, wheel_base_dir):
-        logger.debug('rpath entry {} points outside the wheel -- discarding '
-                     'it.'.format(rpath))
-        return False
     else:
         logger.debug('Preserved rpath entry {}'.format(rpath))
         return True
